@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="America North Commerce Council — The reference for doing business in North America. Canada, United States, Mexico. USMCA / CUSMA / T-MEC.">
+  <meta property="og:title" content="America North Commerce Council — ANCC">
+  <meta property="og:description" content="The only trilateral private organization covering Canada, the United States and Mexico simultaneously.">
+  <meta property="og:url" content="https://amernor.com">
+  <title>America North Commerce Council — ANCC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ══════════════════════════════
+       TOKENS
+    ══════════════════════════════ */
+    :root {
+      --navy:       #1B2A4A;
+      --navy-mid:   #243655;
+      --navy-dark:  #0e1828;
+      --gold:       #C9A84C;
+      --gold-lt:    #dfc07a;
+      --gold-dim:   rgba(201,168,76,0.15);
+      --white:      #FFFFFF;
+      --off-white:  #F7F8FA;
+      --gray-100:   #EDEEF2;
+      --gray-200:   #D8DCE6;
+      --gray-500:   #8A95A8;
+      --gray-600:   #5C6880;
+      --text:       #1a2038;
+      --r:          6px;
+      --rlg:        12px;
+      --sh-sm:      0 2px 12px rgba(27,42,74,0.07);
+      --sh:         0 4px 24px rgba(27,42,74,0.11);
+      --sh-lg:      0 8px 40px rgba(27,42,74,0.16);
+      --t:          0.2s ease;
+    }
+
+    /* ══════════════════════════════
+       RESET & BASE
+    ══════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; font-size: 16px; }
+    body  { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; }
+    img  { max-width: 100%; display: block; }
+    a    { text-decoration: none; color: inherit; }
+    ul   { list-style: none; }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px;
+    }
+    .section-label.dark { color: rgba(201,168,76,0.7); }
+
+    .gold-rule { display: block; width: 44px; height: 3px; background: var(--gold); border: none; border-radius: 2px; }
+
+    .section-head { text-align: center; margin-bottom: 52px; }
+    .section-head h2 { font-size: clamp(1.7rem, 3.2vw, 2.25rem); color: var(--navy); }
+    .section-head h2.on-dark { color: var(--white); }
+    .section-head .gold-rule { margin: 14px auto 0; }
+
+    /* ══════════════════════════════
+       NAV
+    ══════════════════════════════ */
+    #nav {
+      position: sticky; top: 0; z-index: 999;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; max-width: 1140px; margin: 0 auto; height: 68px; gap: 16px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .nav-logo img { height: 38px; width: auto; }
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif; font-size: 0.92rem; font-weight: 600;
+      color: var(--white); line-height: 1.25; max-width: 210px;
+    }
+    .nav-right { display: flex; align-items: center; gap: 4px; }
+    .lang-btn {
+      background: transparent; border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.6); font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      padding: 5px 10px; border-radius: 3px; cursor: pointer; transition: all var(--t);
+    }
+    .lang-btn:hover, .lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+    .nav-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 8px; }
+    .nav-cta {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700;
+      padding: 9px 20px; border-radius: 3px; transition: background var(--t);
+      white-space: nowrap; letter-spacing: 0.02em;
+    }
+    .nav-cta:hover { background: var(--gold-lt); }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    #hero {
+      background: var(--navy); min-height: 92vh;
+      display: flex; align-items: center; padding: 88px 28px;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.032) 1px, transparent 1px);
+      background-size: 56px 56px; pointer-events: none;
+    }
+    #hero::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 65% 40%, rgba(201,168,76,0.1) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(201,168,76,0.05) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 860px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 7px 18px; border-radius: 20px; margin-bottom: 36px;
+    }
+    .hero-badge::before {
+      content: ''; width: 7px; height: 7px; background: var(--gold);
+      border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.75); } }
+
+    .hero-headline {
+      font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 700; color: var(--white);
+      margin-bottom: 28px; letter-spacing: -0.02em; line-height: 1.15;
+    }
+    .hero-flags { font-size: 1.8rem; margin-bottom: 24px; letter-spacing: 10px; line-height: 1; }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.18rem); color: rgba(255,255,255,0.65);
+      max-width: 640px; margin: 0 auto 14px; font-weight: 300; line-height: 1.8;
+    }
+    .hero-location {
+      font-size: 0.77rem; color: rgba(255,255,255,0.32); margin-bottom: 44px;
+      letter-spacing: 0.06em; font-weight: 500;
+    }
+    .hero-cta {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.95rem;
+      padding: 17px 48px; border-radius: 3px; transition: all var(--t); letter-spacing: 0.03em;
+    }
+    .hero-cta:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,168,76,0.28); }
+
+    /* ══════════════════════════════
+       STATS STRIP
+    ══════════════════════════════ */
+    #stats { background: var(--white); border-bottom: 1px solid var(--gray-200); }
+    .stats-inner {
+      max-width: 1140px; margin: 0 auto; padding: 0 28px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item { padding: 40px 28px; text-align: center; border-right: 1px solid var(--gray-200); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 8px; }
+    .stat-num .a { color: var(--gold); }
+    .stat-label { font-size: 0.78rem; color: var(--gray-600); font-weight: 500; letter-spacing: 0.04em; line-height: 1.4; }
+
+    /* ══════════════════════════════
+       STATEMENT
+    ══════════════════════════════ */
+    #statement { background: var(--off-white); padding: 96px 28px; border-bottom: 1px solid var(--gray-200); }
+    .statement-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+    .statement-text {
+      font-size: clamp(1.45rem, 3.2vw, 2.25rem); font-family: 'Playfair Display', serif;
+      font-weight: 600; color: var(--navy); line-height: 1.45; font-style: italic;
+    }
+    .statement-attr { margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+    .statement-attr hr { width: 36px; border: none; border-top: 1px solid var(--gold); }
+    .statement-attr span { font-size: 0.75rem; font-weight: 700; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; }
+
+    /* ══════════════════════════════
+       WHY NOW
+    ══════════════════════════════ */
+    #whynow { background: var(--navy); padding: 88px 28px; }
+    .whynow-headline {
+      font-size: clamp(1.9rem, 4vw, 2.9rem); font-weight: 700; color: var(--white);
+      max-width: 780px; margin: 0 auto 56px; text-align: center; line-height: 1.25;
+    }
+    .whynow-headline em { color: var(--gold); font-style: normal; }
+    .whynow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(201,168,76,0.12); border-radius: var(--rlg); overflow: hidden; }
+    .whynow-card {
+      background: var(--navy-mid); padding: 40px 32px;
+      transition: background var(--t);
+    }
+    .whynow-card:hover { background: rgba(36,54,85,0.95); }
+    .whynow-num {
+      font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700;
+      color: var(--gold); line-height: 1; margin-bottom: 18px; opacity: 0.6;
+    }
+    .whynow-title {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600;
+      color: var(--white); margin-bottom: 12px;
+    }
+    .whynow-desc { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    /* ══════════════════════════════
+       WHY ANCC
+    ══════════════════════════════ */
+    #why { background: var(--white); padding: 96px 28px; border-bottom: 1px solid var(--gray-200); }
+    .why-top { max-width: 760px; margin: 0 auto 60px; text-align: center; }
+    .why-headline { font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 700; color: var(--navy); margin-bottom: 22px; line-height: 1.2; }
+    .why-headline em { color: var(--gold); font-style: normal; }
+    .why-body { font-size: 1.05rem; color: var(--gray-600); line-height: 1.85; }
+    .why-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .why-pillar {
+      background: var(--off-white); border: 1px solid var(--gray-200);
+      border-radius: var(--rlg); padding: 32px 28px;
+      border-top: 3px solid var(--gold); transition: box-shadow var(--t);
+    }
+    .why-pillar:hover { box-shadow: var(--sh); }
+    .why-pillar-icon { font-size: 1.6rem; margin-bottom: 16px; line-height: 1; }
+    .why-pillar-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+    .why-pillar-desc { font-size: 0.875rem; color: var(--gray-600); line-height: 1.65; }
+
+    /* ══════════════════════════════
+       THREE MARKETS
+    ══════════════════════════════ */
+    #markets { background: var(--off-white); padding: 88px 28px; }
+    .markets-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .market-card {
+      background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--rlg);
+      padding: 36px 30px; box-shadow: var(--sh-sm); position: relative; overflow: hidden;
+      transition: box-shadow var(--t), transform var(--t);
+    }
+    .market-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+    .market-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); }
+    .market-flag { font-size: 2.2rem; margin-bottom: 16px; line-height: 1; }
+    .market-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .market-sub { font-size: 0.72rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+    .market-card li { font-size: 0.875rem; color: var(--gray-600); padding: 5px 0 5px 16px; position: relative; line-height: 1.5; }
+    .market-card li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 0.78rem; }
+
+    /* ══════════════════════════════
+       USMCA
+    ══════════════════════════════ */
+    #usmca { background: var(--navy-mid); padding: 88px 28px; }
+    .usmca-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 44px; }
+    .usmca-card {
+      border: 1px solid rgba(201,168,76,0.22); border-radius: var(--rlg);
+      padding: 36px 26px; text-align: center; background: rgba(255,255,255,0.04);
+      transition: all var(--t); position: relative;
+    }
+    .usmca-card::after {
+      content: ''; position: absolute; bottom: 0; left: 28px; right: 28px;
+      height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0; transition: opacity var(--t);
+    }
+    .usmca-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(201,168,76,0.4); }
+    .usmca-card:hover::after { opacity: 1; }
+    .usmca-flag { font-size: 2.4rem; margin-bottom: 20px; line-height: 1; }
+    .usmca-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+    .usmca-full { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 18px; line-height: 1.55; }
+    .usmca-label { font-size: 0.76rem; color: rgba(255,255,255,0.38); font-style: italic; }
+    .usmca-footer { border-top: 1px solid rgba(201,168,76,0.14); padding-top: 40px; text-align: center; }
+    .usmca-summary { font-size: 0.95rem; color: rgba(255,255,255,0.6); max-width: 740px; margin: 0 auto; line-height: 1.8; }
+    .usmca-summary strong { color: rgba(255,255,255,0.88); font-weight: 600; }
+
+    /* ══════════════════════════════
+       WHAT WE DO
+    ══════════════════════════════ */
+    #whatwedo { background: var(--white); padding: 88px 28px; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .pillar-card {
+      background: var(--off-white); border: 1px solid var(--gray-200); border-radius: var(--rlg);
+      padding: 36px 30px; border-left: 4px solid var(--gold); box-shadow: var(--sh-sm);
+      transition: box-shadow var(--t);
+    }
+    .pillar-card:hover { box-shadow: var(--sh); }
+    .pillar-icon { font-size: 1.7rem; margin-bottom: 16px; line-height: 1; }
+    .pillar-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .pillar-desc { font-size: 0.875rem; color: var(--gray-600); line-height: 1.7; }
+
+    /* ══════════════════════════════
+       AI PLATFORM TEASER
+    ══════════════════════════════ */
+    #ai-teaser { background: var(--navy-dark); padding: 88px 28px; border-top: 1px solid rgba(201,168,76,0.08); }
+    .ai-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+    .ai-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 20px; margin-bottom: 28px;
+    }
+    .ai-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 1.5s infinite; }
+    .ai-headline { font-size: clamp(1.9rem, 3.8vw, 2.8rem); font-weight: 700; color: var(--white); margin-bottom: 22px; line-height: 1.2; }
+    .ai-sub { font-size: 1rem; color: rgba(255,255,255,0.58); max-width: 680px; margin: 0 auto 44px; line-height: 1.85; }
+    .ai-sub em { color: rgba(201,168,76,0.85); font-style: normal; font-weight: 600; }
+
+    /* Mock terminal */
+    .ai-mock {
+      background: rgba(0,0,0,0.45); border: 1px solid rgba(201,168,76,0.18);
+      border-radius: var(--rlg); padding: 28px 32px; text-align: left;
+      font-family: 'Courier New', 'Courier', monospace; font-size: 0.82rem;
+      max-width: 680px; margin: 0 auto 40px;
+      box-shadow: 0 0 60px rgba(201,168,76,0.06);
+    }
+    .ai-mock-bar { display: flex; gap: 7px; margin-bottom: 20px; }
+    .ai-mock-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .ai-mock-dot:nth-child(1) { background: rgba(255,94,87,0.5); }
+    .ai-mock-dot:nth-child(2) { background: rgba(255,188,46,0.5); }
+    .ai-mock-dot:nth-child(3) { background: rgba(39,201,63,0.5); }
+    .ai-mock-line { padding: 3px 0; line-height: 1.6; }
+    .ai-mock-line .p { color: var(--gold); margin-right: 8px; user-select: none; }
+    .ai-mock-line .q { color: rgba(255,255,255,0.75); }
+    .ai-mock-line .r { color: rgba(255,255,255,0.45); }
+    .ai-mock-line .g { color: rgba(120,220,120,0.8); }
+    .ai-mock-line .w { color: rgba(255,200,80,0.75); }
+    .ai-mock-spacer { height: 8px; }
+    .ai-cursor { display: inline-block; width: 7px; height: 13px; background: var(--gold); vertical-align: text-bottom; margin-left: 2px; animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    .ai-footer-line { font-size: 0.82rem; color: rgba(255,255,255,0.35); font-style: italic; }
+    .ai-footer-line strong { color: rgba(201,168,76,0.7); font-style: normal; font-weight: 600; }
+
+    /* ══════════════════════════════
+       WHO JOINS
+    ══════════════════════════════ */
+    #whojoin { background: var(--off-white); padding: 88px 28px; border-top: 1px solid var(--gray-200); }
+    .whojoin-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .profile-card {
+      background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--rlg);
+      padding: 30px 26px; box-shadow: var(--sh-sm); transition: box-shadow var(--t), transform var(--t);
+    }
+    .profile-card:hover { box-shadow: var(--sh); transform: translateY(-2px); }
+    .profile-icon { font-size: 1.6rem; margin-bottom: 14px; line-height: 1; }
+    .profile-role { font-family: 'Playfair Display', serif; font-size: 1.02rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .profile-pitch { font-size: 0.875rem; color: var(--gray-600); line-height: 1.65; }
+
+    /* ══════════════════════════════
+       JOIN / FORM
+    ══════════════════════════════ */
+    #join { background: var(--navy); padding: 96px 28px; scroll-margin-top: 68px; }
+    .join-inner { max-width: 660px; margin: 0 auto; text-align: center; }
+    .join-inner .section-head h2 { color: var(--white); }
+    .join-sub { font-size: 0.975rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 44px; }
+    .join-trust { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; margin-bottom: 44px; }
+    .join-trust-item { display: flex; align-items: center; gap: 7px; font-size: 0.77rem; color: rgba(255,255,255,0.45); font-weight: 500; }
+
+    .join-form { text-align: left; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .form-group label { font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 0.06em; text-transform: uppercase; }
+    .form-group input,
+    .form-group select {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--r); padding: 12px 14px;
+      font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--white);
+      width: 100%; transition: border-color var(--t), background var(--t);
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,0.22); }
+    .form-group input:focus,
+    .form-group select:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.09); }
+    .form-group select {
+      cursor: pointer; appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='rgba(255,255,255,0.4)' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
+    }
+    .form-group select option { background: var(--navy); color: var(--white); }
+    .form-submit {
+      width: 100%; background: var(--gold); color: var(--navy);
+      border: none; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700;
+      padding: 16px; border-radius: var(--r); cursor: pointer;
+      transition: all var(--t); letter-spacing: 0.03em; margin-top: 8px;
+    }
+    .form-submit:hover   { background: var(--gold-lt); }
+    .form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    #form-success { display: none; text-align: center; padding: 48px 0; }
+    #form-success .check-icon {
+      width: 56px; height: 56px; background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.38); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; font-size: 1.4rem;
+    }
+    #form-success p { font-size: 1.05rem; color: rgba(255,255,255,0.8); line-height: 1.7; }
+    #form-error-msg {
+      display: none; background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.3);
+      border-radius: var(--r); padding: 12px 16px; font-size: 0.85rem;
+      color: #fca5a5; margin-top: 12px; text-align: center;
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    #footer { background: var(--navy-dark); padding: 56px 28px 32px; border-top: 1px solid rgba(201,168,76,0.1); }
+    .footer-grid {
+      max-width: 1140px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto; gap: 48px; margin-bottom: 40px; align-items: start;
+    }
+    .footer-brand { display: flex; align-items: flex-start; gap: 16px; }
+    .footer-brand img { height: 44px; width: auto; flex-shrink: 0; }
+    .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--white); font-weight: 600; margin-bottom: 6px; }
+    .footer-flags { font-size: 1.25rem; letter-spacing: 4px; margin-bottom: 10px; }
+    .footer-addr { font-size: 0.77rem; color: rgba(255,255,255,0.32); line-height: 1.6; }
+    .footer-addr a { color: rgba(255,255,255,0.42); transition: color var(--t); }
+    .footer-addr a:hover { color: var(--gold); }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .footer-links a { color: rgba(255,255,255,0.48); font-size: 0.85rem; transition: color var(--t); }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1140px; margin: 0 auto; padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .footer-copy { font-size: 0.77rem; color: rgba(255,255,255,0.28); }
+    .footer-501  { font-size: 0.74rem; color: rgba(255,255,255,0.22); font-style: italic; }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 900px) {
+      .markets-grid, .usmca-grid, .pillars-grid,
+      .why-pillars, .whynow-grid, .whojoin-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-links { align-items: flex-start; }
+    }
+    @media (max-width: 680px) {
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--gray-200); padding: 32px 20px; }
+      .stat-item:last-child { border-bottom: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 580px) {
+      .nav-inner { flex-wrap: wrap; height: auto; padding: 12px 18px; gap: 10px; }
+      .nav-logo-text { font-size: 0.83rem; max-width: 155px; }
+      .nav-right { width: 100%; justify-content: flex-end; }
+      #hero { padding: 64px 20px; min-height: 80vh; }
+      .hero-flags { letter-spacing: 5px; }
+      .ai-mock { padding: 20px 18px; font-size: 0.75rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV ─────────────────────────────────────────── -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="ANCC — Home">
+      <img src="logo.png" alt="ANCC Shield Logo" onerror="this.style.display='none'">
+      <span class="nav-logo-text">America North Commerce Council</span>
+    </a>
+    <div class="nav-right">
+      <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
+      <button class="lang-btn"        id="btn-fr" onclick="setLanguage('fr')">FR</button>
+      <button class="lang-btn"        id="btn-es" onclick="setLanguage('es')">ES</button>
+      <div class="nav-sep" aria-hidden="true"></div>
+      <a href="#join" class="nav-cta" data-i18n="nav-cta">Join the Founding Members</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO ─────────────────────────────────────────── -->
+<section id="hero" aria-labelledby="hero-h1">
+  <div class="hero-inner">
+    <div class="hero-badge" data-i18n="hero-badge">Founding Members Program — Now Open</div>
+    <h1 id="hero-h1" class="hero-headline" data-i18n="hero-headline">The Reference for Doing Business in North America.</h1>
+    <div class="hero-flags" role="img" aria-label="Canada, United States, Mexico">🇨🇦 🇺🇸 🇲🇽</div>
+    <p class="hero-sub" data-i18n="hero-sub">One organization. Canada, the United States and Mexico — connected through USMCA / CUSMA / T-MEC.</p>
+    <p class="hero-location">Philadelphia, PA &nbsp;·&nbsp; 501(c)(6) Incorporation in Progress</p>
+    <a href="#join" class="hero-cta" data-i18n="hero-cta">Join the Founding Members</a>
+  </div>
+</section>
+
+<!-- STATS STRIP ─────────────────────────────────── -->
+<div id="stats" role="region" aria-label="Key figures">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num"><span class="a">$</span>1.86<span class="a">T</span></div>
+      <div class="stat-label" data-i18n="stat-l1">Annual North American Trade</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="a">3</span></div>
+      <div class="stat-label" data-i18n="stat-l2">Countries. One Organization.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1994<span class="a">→</span></div>
+      <div class="stat-label" data-i18n="stat-l3">NAFTA Roots. USMCA Expertise.</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATEMENT ───────────────────────────────────── -->
+<section id="statement">
+  <div class="statement-inner">
+    <p class="statement-text" data-i18n="statement">If you want to do business between Canada, the United States and Mexico — you start here.</p>
+    <div class="statement-attr"><hr><span>ANCC</span><hr></div>
+  </div>
+</section>
+
+<!-- WHY NOW ─────────────────────────────────────── -->
+<section id="whynow" aria-labelledby="whynow-h2">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label dark" data-i18n="whynow-label">Why Now</span>
+      <h2 id="whynow-h2" class="on-dark" data-i18n="whynow-headline">North America is being redefined.<br>ANCC is the private sector's answer.</h2>
+      <hr class="gold-rule">
+    </div>
+    <div class="whynow-grid">
+
+      <div class="whynow-card">
+        <div class="whynow-num">01</div>
+        <div class="whynow-title" data-i18n="wn-t1">USMCA / CUSMA / T-MEC — Joint Review 2026</div>
+        <p class="whynow-desc" data-i18n="wn-d1">The trilateral trade agreement enters its mandatory joint review period. The rules governing $1.86 trillion in annual commerce are being rewritten. Organizations that understand all three versions of this text will have a decisive advantage.</p>
+      </div>
+
+      <div class="whynow-card">
+        <div class="whynow-num">02</div>
+        <div class="whynow-title" data-i18n="wn-t2">Trade Policy Shifting at Unprecedented Speed</div>
+        <p class="whynow-desc" data-i18n="wn-d2">Cross-border regulatory environments are evolving faster than any single company or government can track alone. The businesses navigating this moment with the right intelligence and the right network will define the next decade of North American commerce.</p>
+      </div>
+
+      <div class="whynow-card">
+        <div class="whynow-num">03</div>
+        <div class="whynow-title" data-i18n="wn-t3">The Window to Define the Standard</div>
+        <p class="whynow-desc" data-i18n="wn-d3">Organizations that establish the frameworks for trilateral commerce today will hold that position for a generation. ANCC is being built precisely for this window — and founding members are the ones who shape what that standard becomes.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY ANCC ────────────────────────────────────── -->
+<section id="why" aria-labelledby="why-h2">
+  <div class="container">
+    <div class="why-top">
+      <span class="section-label" data-i18n="why-label">Why ANCC</span>
+      <h2 id="why-h2" class="why-headline" data-i18n="why-headline">Built Differently. The Only Trilateral Organization.</h2>
+      <p class="why-body" data-i18n="why-body">Most business councils cover one border. ANCC was designed from the ground up to cover three countries simultaneously — Canada, the United States, and Mexico. Whether you represent a startup in Toronto, a corporation in Philadelphia, or an investor in Mexico City, ANCC is your single access point to the full North American market.</p>
+    </div>
+    <div class="why-pillars">
+      <div class="why-pillar">
+        <div class="why-pillar-icon" aria-hidden="true">🌐</div>
+        <div class="why-pillar-title" data-i18n="why-p1-t">Multilingual by Design</div>
+        <p   class="why-pillar-desc"  data-i18n="why-p1-d">ANCC operates natively in English, French, and Spanish — the three working languages of North American commerce.</p>
+      </div>
+      <div class="why-pillar">
+        <div class="why-pillar-icon" aria-hidden="true">🏛️</div>
+        <div class="why-pillar-title" data-i18n="why-p2-t">Philadelphia Headquarters</div>
+        <p   class="why-pillar-desc"  data-i18n="why-p2-d">Incorporated in Pennsylvania, at the intersection of major U.S. universities, the East Coast business corridor, and USMCA expertise.</p>
+      </div>
+      <div class="why-pillar">
+        <div class="why-pillar-icon" aria-hidden="true">📈</div>
+        <div class="why-pillar-title" data-i18n="why-p3-t">Startups to Multinationals</div>
+        <p   class="why-pillar-desc"  data-i18n="why-p3-d">One organization for companies at every stage — from early-stage founders to established corporations, across all three markets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE MARKETS ───────────────────────────────── -->
+<section id="markets" aria-labelledby="markets-h2">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label" data-i18n="markets-label">Three Markets</span>
+      <h2 id="markets-h2" data-i18n="markets-h">One Council. Three Ecosystems.</h2>
+      <hr class="gold-rule">
+    </div>
+    <div class="markets-grid">
+      <article class="market-card">
+        <div class="market-flag" aria-hidden="true">🇨🇦</div>
+        <div class="market-title" data-i18n="mkt-ca-t">Canada</div>
+        <div class="market-sub"   data-i18n="mkt-ca-s">Global Startup Hub</div>
+        <ul>
+          <li>#5 Global Startup Ecosystem</li>
+          <li>$8.2B VC investment in 2024</li>
+          <li>Toronto — #4 startup hub worldwide</li>
+          <li>Calgary — fastest growing tech hub, North America</li>
+          <li>Montréal — global AI hub</li>
+        </ul>
+      </article>
+      <article class="market-card">
+        <div class="market-flag" aria-hidden="true">🇺🇸</div>
+        <div class="market-title" data-i18n="mkt-us-t">United States</div>
+        <div class="market-sub"   data-i18n="mkt-us-s">Philadelphia — ANCC HQ</div>
+        <ul>
+          <li>#13 Global Startup Ecosystem 2025</li>
+          <li>$76B ecosystem value (2022–2024)</li>
+          <li>$3.3B raised in 2024 (+37.5%)</li>
+          <li>Penn · Drexel · Temple · Princeton</li>
+          <li>Gateway to the U.S. East Coast corridor</li>
+        </ul>
+      </article>
+      <article class="market-card">
+        <div class="market-flag" aria-hidden="true">🇲🇽</div>
+        <div class="market-title" data-i18n="mkt-mx-t">Mexico</div>
+        <div class="market-sub"   data-i18n="mkt-mx-s">Emerging Innovation Hub</div>
+        <ul>
+          <li>$5.8B startup funding in 2024 (+45%)</li>
+          <li>Plan México 2025 — reshoring initiative</li>
+          <li>Fintech · Logistics · Healthtech</li>
+          <li>Mexico City — regional innovation hub</li>
+          <li>Leading nearshoring opportunity via T-MEC</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- USMCA ───────────────────────────────────────── -->
+<section id="usmca" aria-labelledby="usmca-h2">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label dark" data-i18n="usmca-label">The Agreement</span>
+      <h2 id="usmca-h2" class="on-dark" data-i18n="usmca-h">One Agreement. Three Names.</h2>
+      <hr class="gold-rule">
+    </div>
+    <div class="usmca-grid">
+      <article class="usmca-card">
+        <div class="usmca-flag" aria-hidden="true">🇺🇸</div>
+        <div class="usmca-name"  data-i18n="u-c1-n">USMCA</div>
+        <div class="usmca-full"  data-i18n="u-c1-f">United States–Mexico–Canada Agreement</div>
+        <div class="usmca-label" data-i18n="u-c1-l">Used by the U.S. private sector</div>
+      </article>
+      <article class="usmca-card">
+        <div class="usmca-flag" aria-hidden="true">🇨🇦</div>
+        <div class="usmca-name"  data-i18n="u-c2-n">CUSMA</div>
+        <div class="usmca-full"  data-i18n="u-c2-f">Canada–United States–Mexico Agreement</div>
+        <div class="usmca-label" data-i18n="u-c2-l">Used by the Canadian private sector</div>
+      </article>
+      <article class="usmca-card">
+        <div class="usmca-flag" aria-hidden="true">🇲🇽</div>
+        <div class="usmca-name"  data-i18n="u-c3-n">T-MEC</div>
+        <div class="usmca-full"  data-i18n="u-c3-f">Tratado entre México, Estados Unidos y Canadá</div>
+        <div class="usmca-label" data-i18n="u-c3-l">Used by the Mexican private sector</div>
+      </article>
+    </div>
+    <div class="usmca-footer">
+      <p class="usmca-summary" data-i18n="u-summary">Same legal text. Three national names. <strong>$1.86 trillion in annual trade.</strong> ANCC speaks all three — plus NAFTA history since 1994.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO ──────────────────────────────────── -->
+<section id="whatwedo" aria-labelledby="whatwedo-h2">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label" data-i18n="wwd-label">Our Value</span>
+      <h2 id="whatwedo-h2" data-i18n="wwd-h">What We Do</h2>
+      <hr class="gold-rule">
+    </div>
+    <div class="pillars-grid">
+      <article class="pillar-card">
+        <div class="pillar-icon" aria-hidden="true">📊</div>
+        <div class="pillar-title" data-i18n="p1-t">Market Intelligence</div>
+        <p   class="pillar-desc"  data-i18n="p1-d">In-depth analysis of Canadian, American, and Mexican markets — trends, regulations, and opportunities across all three jurisdictions.</p>
+      </article>
+      <article class="pillar-card">
+        <div class="pillar-icon" aria-hidden="true">🎓</div>
+        <div class="pillar-title" data-i18n="p2-t">University Network</div>
+        <p   class="pillar-desc"  data-i18n="p2-d">Strategic partnerships with Penn, Drexel, Temple, Princeton and leading Canadian and Mexican universities.</p>
+      </article>
+      <article class="pillar-card">
+        <div class="pillar-icon" aria-hidden="true">🚀</div>
+        <div class="pillar-title" data-i18n="p3-t">Entrepreneur Resources</div>
+        <p   class="pillar-desc"  data-i18n="p3-d">Legal, tax, incorporation, insurance, and real estate guidance for startups and SMEs doing business across North America.</p>
+      </article>
+      <article class="pillar-card">
+        <div class="pillar-icon" aria-hidden="true">⚖️</div>
+        <div class="pillar-title" data-i18n="p4-t">USMCA / CUSMA / T-MEC Expertise</div>
+        <p   class="pillar-desc"  data-i18n="p4-d">Expert navigation of the trilateral trade agreement in all three of its national names, with full NAFTA historical context since 1994.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AI PLATFORM TEASER ──────────────────────────── -->
+<section id="ai-teaser" aria-labelledby="ai-h2">
+  <div class="ai-inner">
+    <div class="ai-badge" data-i18n="ai-badge">Coming Soon</div>
+    <h2 id="ai-h2" class="ai-headline" data-i18n="ai-headline">The ANCC Trade Intelligence Engine</h2>
+    <p class="ai-sub" data-i18n="ai-sub">A proprietary AI platform that reads <em>USMCA, CUSMA, and T-MEC simultaneously</em> — cross-referencing tariff schedules, rules of origin, and sector provisions in real time. One query. Three jurisdictions. Instant clarity.</p>
+
+    <!-- Mock terminal — static, illustrative -->
+    <div class="ai-mock" role="img" aria-label="AI platform preview">
+      <div class="ai-mock-bar">
+        <div class="ai-mock-dot"></div>
+        <div class="ai-mock-dot"></div>
+        <div class="ai-mock-dot"></div>
+      </div>
+      <div class="ai-mock-line"><span class="p">▶</span><span class="q">Query: Rules of Origin — automotive sector, Mexico → United States</span></div>
+      <div class="ai-mock-spacer"></div>
+      <div class="ai-mock-line"><span class="p">⟫</span><span class="r">Reading USMCA Chapter 4, Art. 4.2...</span></div>
+      <div class="ai-mock-line"><span class="p"> </span><span class="g">✓ RVC threshold: 75% — confirmed</span></div>
+      <div class="ai-mock-line"><span class="p">⟫</span><span class="r">Cross-referencing CUSMA Ch. 4 (identical provision)...</span></div>
+      <div class="ai-mock-line"><span class="p"> </span><span class="g">✓ Confirmed — aligned with USMCA</span></div>
+      <div class="ai-mock-line"><span class="p">⟫</span><span class="r">Verificando T-MEC Capítulo 4, Art. 4.2...</span></div>
+      <div class="ai-mock-line"><span class="p"> </span><span class="g">✓ Contenido de Valor Regional: 75% — confirmado</span></div>
+      <div class="ai-mock-spacer"></div>
+      <div class="ai-mock-line"><span class="p">⟫</span><span class="w">Note: 2026 Joint Review — Ch. 4 provisions under active discussion<span class="ai-cursor"></span></span></div>
+    </div>
+
+    <p class="ai-footer-line" data-i18n="ai-footer">Exclusively available to <strong>ANCC members</strong>. Join the founding cohort to be first in line.</p>
+  </div>
+</section>
+
+<!-- WHO JOINS ───────────────────────────────────── -->
+<section id="whojoin" aria-labelledby="whojoin-h2">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label" data-i18n="wj-label">Who Joins</span>
+      <h2 id="whojoin-h2" data-i18n="wj-h">Built for Every Stage of North American Business.</h2>
+      <hr class="gold-rule">
+    </div>
+    <div class="whojoin-grid">
+
+      <article class="profile-card">
+        <div class="profile-icon" aria-hidden="true">🚀</div>
+        <div class="profile-role" data-i18n="pr1-t">Startups &amp; Founders</div>
+        <p   class="profile-pitch" data-i18n="pr1-d">You're scaling across borders. ANCC provides the trilateral legal, tax, and market intelligence frameworks — and the network to move faster than you would alone.</p>
+      </article>
+
+      <article class="profile-card">
+        <div class="profile-icon" aria-hidden="true">🏢</div>
+        <div class="profile-role" data-i18n="pr2-t">SMEs &amp; Corporates</div>
+        <p   class="profile-pitch" data-i18n="pr2-d">Expand without the complexity. Market entry, regulatory alignment, and trade facilitation across Canada, the United States, and Mexico — in one membership.</p>
+      </article>
+
+      <article class="profile-card">
+        <div class="profile-icon" aria-hidden="true">⚖️</div>
+        <div class="profile-role" data-i18n="pr3-t">Professional Services</div>
+        <p   class="profile-pitch" data-i18n="pr3-d">Your clients are going trilateral. Be at the table where standards are set, and position your practice at the center of North American commerce before the market catches up.</p>
+      </article>
+
+      <article class="profile-card">
+        <div class="profile-icon" aria-hidden="true">🎓</div>
+        <div class="profile-role" data-i18n="pr4-t">Universities &amp; Research</div>
+        <p   class="profile-pitch" data-i18n="pr4-d">Connect your talent pipeline and research programs to a three-country innovation network — students, entrepreneurs, and policymakers across all three markets.</p>
+      </article>
+
+      <article class="profile-card">
+        <div class="profile-icon" aria-hidden="true">💼</div>
+        <div class="profile-role" data-i18n="pr5-t">Investors</div>
+        <p   class="profile-pitch" data-i18n="pr5-d">Cross-border deal flow. Market intelligence before it's public. ANCC members see the trilateral ecosystem before the broader market does.</p>
+      </article>
+
+      <article class="profile-card">
+        <div class="profile-icon" aria-hidden="true">🌐</div>
+        <div class="profile-role" data-i18n="pr6-t">International Companies</div>
+        <p   class="profile-pitch" data-i18n="pr6-d">Entering North America from Europe, Asia, or beyond? ANCC is your single door to Canada, the United States, and Mexico — with the right legal and commercial framework from day one.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- JOIN FORM ───────────────────────────────────── -->
+<section id="join" aria-labelledby="join-h2">
+  <div class="join-inner">
+    <div class="section-head">
+      <span class="section-label dark" data-i18n="join-label">Founding Membership</span>
+      <h2 id="join-h2" data-i18n="join-h">Be Part of the Founding.</h2>
+      <hr class="gold-rule">
+    </div>
+    <p class="join-sub" data-i18n="join-sub">ANCC is building the standard for North American business. Founding members shape the organization from the ground up — priority access, preferred membership rates, and a seat at the table.</p>
+
+    <div class="join-trust">
+      <div class="join-trust-item">🏛️ &nbsp;Philadelphia, PA</div>
+      <div class="join-trust-item">📋 &nbsp;<span data-i18n="trust-501">501(c)(6) in progress</span></div>
+      <div class="join-trust-item">🔒 &nbsp;<span data-i18n="trust-priv">Private &amp; secure</span></div>
+    </div>
+
+    <form class="join-form" id="join-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-fn" data-i18n="f-fn">First Name</label>
+          <input type="text" id="f-fn" name="first_name" required data-i18n-ph="f-fn" placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label for="f-ln" data-i18n="f-ln">Last Name</label>
+          <input type="text" id="f-ln" name="last_name"  required data-i18n-ph="f-ln"  placeholder="Last Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="f-em" data-i18n="f-em">Email Address</label>
+        <input type="email" id="f-em" name="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-co" data-i18n="f-co">Country</label>
+          <select id="f-co" name="country" required>
+            <option value="" disabled selected>—</option>
+            <option value="Canada"        data-i18n="o-ca">Canada</option>
+            <option value="United States" data-i18n="o-us">United States</option>
+            <option value="Mexico"        data-i18n="o-mx">Mexico</option>
+            <option value="Other"         data-i18n="o-other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-pr" data-i18n="f-pr">Your Profile</label>
+          <select id="f-pr" name="profile" required>
+            <option value="" disabled selected>—</option>
+            <option value="Startup"               data-i18n="pr-startup">Startup</option>
+            <option value="SME"                   data-i18n="pr-sme">SME</option>
+            <option value="Corporate"             data-i18n="pr-corp">Corporate</option>
+            <option value="University"            data-i18n="pr-univ">University</option>
+            <option value="Professional Services" data-i18n="pr-pro">Professional Services</option>
+            <option value="Investor"              data-i18n="pr-inv">Investor</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="form-submit" id="form-btn" data-i18n="f-submit">Apply for Founding Membership</button>
+      <div id="form-error-msg" role="alert" data-i18n="f-error"></div>
+    </form>
+
+    <div id="form-success" role="status">
+      <div class="check-icon" aria-hidden="true">✓</div>
+      <p data-i18n="f-thanks">Thank you. We'll be in touch shortly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER ──────────────────────────────────────── -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="logo.png" alt="ANCC" onerror="this.style.display='none'">
+      <div>
+        <div class="footer-brand-name">America North Commerce Council</div>
+        <div class="footer-flags" aria-hidden="true">🇨🇦 🇺🇸 🇲🇽</div>
+        <div class="footer-addr">
+          Philadelphia, Pennsylvania, United States<br>
+          <a href="mailto:info@amernor.com">info@amernor.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:info@amernor.com">info@amernor.com</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" data-i18n="ft-li">LinkedIn</a>
+      <a href="https://x.com"        target="_blank" rel="noopener" data-i18n="ft-x">X (Twitter)</a>
+      <a href="#join" data-i18n="nav-cta">Join the Founding Members</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy" data-i18n="ft-copy">© 2025 America North Commerce Council. All rights reserved.</span>
+    <span class="footer-501"  data-i18n="ft-501">501(c)(6) Incorporation in Progress — Pennsylvania, United States</span>
+  </div>
+</footer>
+
+<script>
+/* ════════════════════════════════════════════════
+   TRANSLATIONS
+════════════════════════════════════════════════ */
+const T = {
+  en: {
+    /* nav / shared cta */
+    "nav-cta":      "Join the Founding Members",
+    /* hero */
+    "hero-badge":   "Founding Members Program — Now Open",
+    "hero-headline":"The Reference for Doing Business in North America.",
+    "hero-sub":     "One organization. Canada, the United States and Mexico — connected through USMCA / CUSMA / T-MEC.",
+    "hero-cta":     "Join the Founding Members",
+    /* stats */
+    "stat-l1":      "Annual North American Trade",
+    "stat-l2":      "Countries. One Organization.",
+    "stat-l3":      "NAFTA Roots. USMCA Expertise.",
+    /* statement */
+    "statement":    "If you want to do business between Canada, the United States and Mexico — you start here.",
+    /* why now */
+    "whynow-label": "Why Now",
+    "whynow-headline": "North America is being redefined.\nANCC is the private sector's answer.",
+    "wn-t1": "USMCA / CUSMA / T-MEC — Joint Review 2026",
+    "wn-d1": "The trilateral trade agreement enters its mandatory joint review period. The rules governing $1.86 trillion in annual commerce are being rewritten. Organizations that understand all three versions of this text will have a decisive advantage.",
+    "wn-t2": "Trade Policy Shifting at Unprecedented Speed",
+    "wn-d2": "Cross-border regulatory environments are evolving faster than any single company or government can track alone. The businesses navigating this moment with the right intelligence and the right network will define the next decade of North American commerce.",
+    "wn-t3": "The Window to Define the Standard",
+    "wn-d3": "Organizations that establish the frameworks for trilateral commerce today will hold that position for a generation. ANCC is being built precisely for this window — and founding members are the ones who shape what that standard becomes.",
+    /* why ancc */
+    "why-label":  "Why ANCC",
+    "why-headline":"Built Differently. The Only Trilateral Organization.",
+    "why-body":   "Most business councils cover one border. ANCC was designed from the ground up to cover three countries simultaneously — Canada, the United States, and Mexico. Whether you represent a startup in Toronto, a corporation in Philadelphia, or an investor in Mexico City, ANCC is your single access point to the full North American market.",
+    "why-p1-t":   "Multilingual by Design",
+    "why-p1-d":   "ANCC operates natively in English, French, and Spanish — the three working languages of North American commerce.",
+    "why-p2-t":   "Philadelphia Headquarters",
+    "why-p2-d":   "Incorporated in Pennsylvania, at the intersection of major U.S. universities, the East Coast business corridor, and USMCA expertise.",
+    "why-p3-t":   "Startups to Multinationals",
+    "why-p3-d":   "One organization for companies at every stage — from early-stage founders to established corporations, across all three markets.",
+    /* markets */
+    "markets-label":"Three Markets",
+    "markets-h":  "One Council. Three Ecosystems.",
+    "mkt-ca-t":   "Canada",    "mkt-ca-s": "Global Startup Hub",
+    "mkt-us-t":   "United States", "mkt-us-s": "Philadelphia — ANCC HQ",
+    "mkt-mx-t":   "Mexico",    "mkt-mx-s": "Emerging Innovation Hub",
+    /* usmca */
+    "usmca-label":"The Agreement",
+    "usmca-h":    "One Agreement. Three Names.",
+    "u-c1-n":     "USMCA",   "u-c1-f": "United States–Mexico–Canada Agreement", "u-c1-l": "Used by the U.S. private sector",
+    "u-c2-n":     "CUSMA",   "u-c2-f": "Canada–United States–Mexico Agreement", "u-c2-l": "Used by the Canadian private sector",
+    "u-c3-n":     "T-MEC",   "u-c3-f": "Tratado entre México, Estados Unidos y Canadá", "u-c3-l": "Used by the Mexican private sector",
+    "u-summary":  "Same legal text. Three national names. $1.86 trillion in annual trade. ANCC speaks all three — plus NAFTA history since 1994.",
+    /* what we do */
+    "wwd-label":  "Our Value",
+    "wwd-h":      "What We Do",
+    "p1-t": "Market Intelligence",     "p1-d": "In-depth analysis of Canadian, American, and Mexican markets — trends, regulations, and opportunities across all three jurisdictions.",
+    "p2-t": "University Network",      "p2-d": "Strategic partnerships with Penn, Drexel, Temple, Princeton and leading Canadian and Mexican universities.",
+    "p3-t": "Entrepreneur Resources",  "p3-d": "Legal, tax, incorporation, insurance, and real estate guidance for startups and SMEs doing business across North America.",
+    "p4-t": "USMCA / CUSMA / T-MEC Expertise", "p4-d": "Expert navigation of the trilateral trade agreement in all three of its national names, with full NAFTA historical context since 1994.",
+    /* ai teaser */
+    "ai-badge":    "Coming Soon",
+    "ai-headline": "The ANCC Trade Intelligence Engine",
+    "ai-sub":      "A proprietary AI platform that reads USMCA, CUSMA, and T-MEC simultaneously — cross-referencing tariff schedules, rules of origin, and sector provisions in real time. One query. Three jurisdictions. Instant clarity.",
+    "ai-footer":   "Exclusively available to ANCC members. Join the founding cohort to be first in line.",
+    /* who joins */
+    "wj-label":   "Who Joins",
+    "wj-h":       "Built for Every Stage of North American Business.",
+    "pr1-t": "Startups & Founders",          "pr1-d": "You're scaling across borders. ANCC provides the trilateral legal, tax, and market intelligence frameworks — and the network to move faster than you would alone.",
+    "pr2-t": "SMEs & Corporates",             "pr2-d": "Expand without the complexity. Market entry, regulatory alignment, and trade facilitation across Canada, the United States, and Mexico — in one membership.",
+    "pr3-t": "Professional Services",         "pr3-d": "Your clients are going trilateral. Be at the table where standards are set, and position your practice at the center of North American commerce before the market catches up.",
+    "pr4-t": "Universities & Research",       "pr4-d": "Connect your talent pipeline and research programs to a three-country innovation network — students, entrepreneurs, and policymakers across all three markets.",
+    "pr5-t": "Investors",                     "pr5-d": "Cross-border deal flow. Market intelligence before it's public. ANCC members see the trilateral ecosystem before the broader market does.",
+    "pr6-t": "International Companies",       "pr6-d": "Entering North America from Europe, Asia, or beyond? ANCC is your single door to Canada, the United States, and Mexico — with the right legal and commercial framework from day one.",
+    /* join form */
+    "join-label": "Founding Membership",
+    "join-h":     "Be Part of the Founding.",
+    "join-sub":   "ANCC is building the standard for North American business. Founding members shape the organization from the ground up — priority access, preferred membership rates, and a seat at the table.",
+    "trust-501":  "501(c)(6) in progress",
+    "trust-priv": "Private & secure",
+    "f-fn": "First Name", "f-ln": "Last Name", "f-em": "Email Address",
+    "f-co": "Country",    "f-pr": "Your Profile",
+    "o-ca": "Canada", "o-us": "United States", "o-mx": "Mexico", "o-other": "Other",
+    "pr-startup": "Startup", "pr-sme": "SME", "pr-corp": "Corporate",
+    "pr-univ": "University", "pr-pro": "Professional Services", "pr-inv": "Investor",
+    "f-submit":  "Apply for Founding Membership",
+    "f-thanks":  "Thank you. We'll be in touch shortly.",
+    "f-error":   "Something went wrong. Please try again or email info@amernor.com.",
+    /* footer */
+    "ft-li":   "LinkedIn", "ft-x": "X (Twitter)",
+    "ft-copy": "© 2025 America North Commerce Council. All rights reserved.",
+    "ft-501":  "501(c)(6) Incorporation in Progress — Pennsylvania, United States"
+  },
+
+  fr: {
+    "nav-cta":      "Rejoindre les membres fondateurs",
+    "hero-badge":   "Programme membres fondateurs — Maintenant ouvert",
+    "hero-headline":"La référence pour faire des affaires en Amérique du Nord.",
+    "hero-sub":     "Une organisation. Le Canada, les États-Unis et le Mexique — connectés par l'ACÉUM / CUSMA / T-MEC.",
+    "hero-cta":     "Rejoindre les membres fondateurs",
+    "stat-l1":      "Commerce annuel nord-américain",
+    "stat-l2":      "Pays. Une organisation.",
+    "stat-l3":      "Racines ALENA. Expertise ACÉUM.",
+    "statement":    "Si vous voulez faire des affaires entre le Canada, les États-Unis et le Mexique — vous commencez ici.",
+    "whynow-label": "Pourquoi maintenant",
+    "whynow-headline": "L'Amérique du Nord se redéfinit.\nL'ANCC est la réponse du secteur privé.",
+    "wn-t1": "ACÉUM / CUSMA / T-MEC — Révision conjointe 2026",
+    "wn-d1": "L'accord commercial trilatéral entre dans sa période de révision conjointe obligatoire. Les règles régissant 1 860 milliards USD d'échanges annuels sont en cours de réécriture. Les organisations qui maîtrisent les trois versions de ce texte auront un avantage décisif.",
+    "wn-t2": "Politiques commerciales en mutation rapide",
+    "wn-d2": "Les environnements réglementaires transfrontaliers évoluent plus vite que toute entreprise ou gouvernement ne peut le suivre seul. Les entreprises qui naviguent ce moment avec la bonne intelligence et le bon réseau définiront la prochaine décennie du commerce nord-américain.",
+    "wn-t3": "La fenêtre pour définir le standard",
+    "wn-d3": "Les organisations qui établissent les cadres du commerce trilatéral aujourd'hui occuperont cette position pour une génération. L'ANCC est construite précisément pour cette fenêtre — et les membres fondateurs sont ceux qui définissent ce que ce standard deviendra.",
+    "why-label":  "Pourquoi l'ANCC",
+    "why-headline":"Conçue différemment. La seule organisation trilatérale.",
+    "why-body":   "La plupart des conseils d'affaires couvrent une seule frontière. L'ANCC a été conçue dès le départ pour couvrir trois pays simultanément — le Canada, les États-Unis et le Mexique. Que vous représentiez une startup à Toronto, une entreprise à Philadelphie ou un investisseur à Mexico, l'ANCC est votre point d'accès unique au marché nord-américain dans son intégralité.",
+    "why-p1-t":   "Multilingue par conception",
+    "why-p1-d":   "L'ANCC opère nativement en anglais, en français et en espagnol — les trois langues de travail du commerce nord-américain.",
+    "why-p2-t":   "Siège social à Philadelphie",
+    "why-p2-d":   "Incorporée en Pennsylvanie, à l'intersection des grandes universités américaines, du corridor d'affaires de la côte Est et de l'expertise ACÉUM.",
+    "why-p3-t":   "Des startups aux multinationales",
+    "why-p3-d":   "Une organisation pour les entreprises à chaque étape — des fondateurs en démarrage aux grandes entreprises établies, dans les trois marchés.",
+    "markets-label":"Trois marchés",
+    "markets-h":  "Un conseil. Trois écosystèmes.",
+    "mkt-ca-t":   "Canada",    "mkt-ca-s": "Pôle mondial des startups",
+    "mkt-us-t":   "États-Unis", "mkt-us-s": "Philadelphie — siège de l'ANCC",
+    "mkt-mx-t":   "Mexique",   "mkt-mx-s": "Pôle d'innovation émergent",
+    "usmca-label":"L'accord",
+    "usmca-h":    "Un accord. Trois noms.",
+    "u-c1-n": "USMCA",         "u-c1-f": "United States–Mexico–Canada Agreement", "u-c1-l": "Utilisé par le secteur privé américain",
+    "u-c2-n": "CUSMA / ACÉUM", "u-c2-f": "Accord Canada–États-Unis–Mexique",       "u-c2-l": "Utilisé par le secteur privé canadien",
+    "u-c3-n": "T-MEC",         "u-c3-f": "Tratado entre México, Estados Unidos y Canadá", "u-c3-l": "Utilisé par le secteur privé mexicain",
+    "u-summary": "Même texte légal. Trois noms nationaux. 1 860 milliards USD d'échanges annuels. L'ANCC maîtrise les trois — plus l'histoire de l'ALENA depuis 1994.",
+    "wwd-label":  "Notre valeur",
+    "wwd-h":      "Nos services",
+    "p1-t": "Intelligence des marchés",     "p1-d": "Analyse approfondie des marchés canadien, américain et mexicain — tendances, réglementations et opportunités dans les trois juridictions.",
+    "p2-t": "Réseau universitaire",         "p2-d": "Partenariats stratégiques avec Penn, Drexel, Temple, Princeton et les grandes universités canadiennes et mexicaines.",
+    "p3-t": "Ressources entrepreneuriales", "p3-d": "Accompagnement juridique, fiscal, en incorporation, assurances et immobilier pour les startups et PME actives en Amérique du Nord.",
+    "p4-t": "Expertise USMCA / CUSMA / T-MEC", "p4-d": "Navigation experte de l'accord commercial trilatéral dans ses trois appellations nationales, avec le contexte historique complet de l'ALENA depuis 1994.",
+    "ai-badge":    "Prochainement",
+    "ai-headline": "Le moteur d'intelligence commerciale ANCC",
+    "ai-sub":      "Une plateforme IA propriétaire qui lit simultanément l'USMCA, le CUSMA et le T-MEC — croisant droits de douane, règles d'origine et dispositions sectorielles en temps réel. Une requête. Trois juridictions. Une clarté immédiate.",
+    "ai-footer":   "Disponible exclusivement aux membres ANCC. Rejoignez la cohorte fondatrice pour être en première ligne.",
+    "wj-label":   "Qui nous rejoint",
+    "wj-h":       "Conçu pour chaque étape des affaires nord-américaines.",
+    "pr1-t": "Startups & Fondateurs",         "pr1-d": "Vous évoluez au-delà des frontières. L'ANCC vous fournit les cadres juridiques, fiscaux et de veille de marché trilatéraux — et le réseau pour aller plus vite qu'en solo.",
+    "pr2-t": "PME & Grandes entreprises",     "pr2-d": "Expansion sans la complexité. Entrée sur le marché, alignement réglementaire et facilitation du commerce au Canada, aux États-Unis et au Mexique — en un seul membership.",
+    "pr3-t": "Services professionnels",       "pr3-d": "Vos clients deviennent trilatéraux. Soyez à la table où les standards se définissent, et positionnez votre cabinet au cœur des affaires nord-américaines avant que le marché ne suive.",
+    "pr4-t": "Universités & Recherche",       "pr4-d": "Connectez votre vivier de talents et vos programmes de recherche à un réseau d'innovation sur trois pays — étudiants, entrepreneurs et décideurs politiques dans les trois marchés.",
+    "pr5-t": "Investisseurs",                 "pr5-d": "Flux d'affaires transfrontalier. Intelligence de marché avant qu'elle soit publique. Les membres ANCC voient l'écosystème trilatéral avant le marché.",
+    "pr6-t": "Entreprises internationales",   "pr6-d": "Vous entrez en Amérique du Nord depuis l'Europe, l'Asie ou ailleurs? L'ANCC est votre porte unique vers le Canada, les États-Unis et le Mexique — avec le bon cadre juridique et commercial dès le premier jour.",
+    "join-label": "Membres fondateurs",
+    "join-h":     "Faites partie des fondateurs.",
+    "join-sub":   "L'ANCC établit la référence pour les affaires nord-américaines. Les membres fondateurs façonnent l'organisation dès le départ — accès prioritaire, tarifs préférentiels et une place à la table.",
+    "trust-501":  "501(c)(6) en cours",
+    "trust-priv": "Privé et sécurisé",
+    "f-fn": "Prénom", "f-ln": "Nom de famille", "f-em": "Adresse courriel",
+    "f-co": "Pays",   "f-pr": "Votre profil",
+    "o-ca": "Canada", "o-us": "États-Unis", "o-mx": "Mexique", "o-other": "Autre",
+    "pr-startup": "Startup", "pr-sme": "PME", "pr-corp": "Grande entreprise",
+    "pr-univ": "Université", "pr-pro": "Services professionnels", "pr-inv": "Investisseur",
+    "f-submit":  "Postuler comme membre fondateur",
+    "f-thanks":  "Merci. Nous vous contacterons prochainement.",
+    "f-error":   "Une erreur s'est produite. Veuillez réessayer ou écrire à info@amernor.com.",
+    "ft-li": "LinkedIn", "ft-x": "X (Twitter)",
+    "ft-copy": "© 2025 America North Commerce Council. Tous droits réservés.",
+    "ft-501":  "Incorporation 501(c)(6) en cours — Pennsylvanie, États-Unis"
+  },
+
+  es: {
+    "nav-cta":      "Únete a los miembros fundadores",
+    "hero-badge":   "Programa miembros fundadores — Ahora abierto",
+    "hero-headline":"La referencia para hacer negocios en América del Norte.",
+    "hero-sub":     "Una organización. Canadá, Estados Unidos y México — conectados a través del USMCA / CUSMA / T-MEC.",
+    "hero-cta":     "Únete a los miembros fundadores",
+    "stat-l1":      "Comercio anual de América del Norte",
+    "stat-l2":      "Países. Una organización.",
+    "stat-l3":      "Raíces TLCAN. Experiencia USMCA.",
+    "statement":    "Si quieres hacer negocios entre Canadá, Estados Unidos y México — empiezas aquí.",
+    "whynow-label": "Por qué ahora",
+    "whynow-headline": "América del Norte se está redefiniendo.\nEl ANCC es la respuesta del sector privado.",
+    "wn-t1": "USMCA / CUSMA / T-MEC — Revisión conjunta 2026",
+    "wn-d1": "El acuerdo comercial trilateral entra en su período de revisión conjunta obligatoria. Las reglas que rigen 1,86 billones USD en comercio anual están siendo reescritas. Las organizaciones que dominen las tres versiones de este texto tendrán una ventaja decisiva.",
+    "wn-t2": "Políticas comerciales en rápida transformación",
+    "wn-d2": "Los entornos regulatorios transfronterizos están evolucionando más rápido de lo que cualquier empresa o gobierno puede seguir por sí solo. Las empresas que naveguen este momento con la inteligencia y la red correctas definirán la próxima década del comercio norteamericano.",
+    "wn-t3": "La ventana para definir el estándar",
+    "wn-d3": "Las organizaciones que establezcan los marcos del comercio trilateral hoy ocuparán esa posición durante una generación. El ANCC está siendo construido precisamente para esta ventana — y los miembros fundadores son quienes dan forma a lo que ese estándar se convertirá.",
+    "why-label":  "Por qué el ANCC",
+    "why-headline":"Diseñada diferente. La única organización trilateral.",
+    "why-body":   "La mayoría de los consejos empresariales cubren una sola frontera. El ANCC fue diseñado desde sus cimientos para cubrir tres países simultáneamente — Canadá, Estados Unidos y México. Ya sea que representes a una startup en Toronto, una corporación en Filadelfia o un inversor en Ciudad de México, el ANCC es tu único punto de acceso al mercado norteamericano completo.",
+    "why-p1-t":   "Multilingüe por diseño",
+    "why-p1-d":   "El ANCC opera de forma nativa en inglés, francés y español — los tres idiomas de trabajo del comercio norteamericano.",
+    "why-p2-t":   "Sede en Filadelfia",
+    "why-p2-d":   "Incorporado en Pensilvania, en la intersección de las principales universidades estadounidenses, el corredor empresarial de la Costa Este y la experiencia USMCA.",
+    "why-p3-t":   "De startups a multinacionales",
+    "why-p3-d":   "Una organización para empresas de toda etapa — desde fundadores en etapas iniciales hasta corporaciones establecidas, en los tres mercados.",
+    "markets-label":"Tres mercados",
+    "markets-h":  "Un consejo. Tres ecosistemas.",
+    "mkt-ca-t":   "Canadá",         "mkt-ca-s": "Centro global de startups",
+    "mkt-us-t":   "Estados Unidos",  "mkt-us-s": "Filadelfia — sede del ANCC",
+    "mkt-mx-t":   "México",          "mkt-mx-s": "Centro de innovación emergente",
+    "usmca-label":"El acuerdo",
+    "usmca-h":    "Un acuerdo. Tres nombres.",
+    "u-c1-n": "USMCA", "u-c1-f": "United States–Mexico–Canada Agreement", "u-c1-l": "Utilizado por el sector privado de EE. UU.",
+    "u-c2-n": "CUSMA", "u-c2-f": "Canada–United States–Mexico Agreement", "u-c2-l": "Utilizado por el sector privado canadiense",
+    "u-c3-n": "T-MEC", "u-c3-f": "Tratado entre México, Estados Unidos y Canadá", "u-c3-l": "Utilizado por el sector privado mexicano",
+    "u-summary": "Mismo texto legal. Tres nombres nacionales. 1,86 billones USD en comercio anual. El ANCC domina los tres — más la historia del TLCAN desde 1994.",
+    "wwd-label":  "Nuestro valor",
+    "wwd-h":      "Lo que hacemos",
+    "p1-t": "Inteligencia de mercado",      "p1-d": "Análisis en profundidad de los mercados canadiense, estadounidense y mexicano — tendencias, regulaciones y oportunidades en las tres jurisdicciones.",
+    "p2-t": "Red universitaria",            "p2-d": "Asociaciones estratégicas con Penn, Drexel, Temple, Princeton y las principales universidades canadienses y mexicanas.",
+    "p3-t": "Recursos para emprendedores",  "p3-d": "Orientación legal, fiscal, de incorporación, seguros e inmobiliaria para startups y pymes que hacen negocios en América del Norte.",
+    "p4-t": "Experiencia USMCA / CUSMA / T-MEC", "p4-d": "Navegación experta del acuerdo comercial trilateral en sus tres denominaciones nacionales, con el contexto histórico completo del TLCAN desde 1994.",
+    "ai-badge":    "Próximamente",
+    "ai-headline": "El motor de inteligencia comercial del ANCC",
+    "ai-sub":      "Una plataforma de IA propietaria que lee USMCA, CUSMA y T-MEC simultáneamente — cruzando aranceles, reglas de origen y disposiciones sectoriales en tiempo real. Una consulta. Tres jurisdicciones. Claridad instantánea.",
+    "ai-footer":   "Disponible exclusivamente para miembros del ANCC. Únete a la cohorte fundadora para ser el primero en acceder.",
+    "wj-label":   "Quién se une",
+    "wj-h":       "Construido para cada etapa del negocio norteamericano.",
+    "pr1-t": "Startups y fundadores",         "pr1-d": "Estás escalando más allá de las fronteras. El ANCC proporciona los marcos legales, fiscales y de inteligencia de mercado trilaterales — y la red para avanzar más rápido de lo que lo harías solo.",
+    "pr2-t": "Pymes y corporaciones",         "pr2-d": "Expansión sin la complejidad. Entrada al mercado, alineación regulatoria y facilitación comercial en Canadá, Estados Unidos y México — en una sola membresía.",
+    "pr3-t": "Servicios profesionales",       "pr3-d": "Tus clientes se están volviendo trilaterales. Sé en la mesa donde se definen los estándares, y posiciona tu práctica en el centro del comercio norteamericano antes de que el mercado lo alcance.",
+    "pr4-t": "Universidades e investigación", "pr4-d": "Conecta tu cartera de talento y programas de investigación a una red de innovación de tres países — estudiantes, emprendedores y tomadores de decisiones en los tres mercados.",
+    "pr5-t": "Inversores",                    "pr5-d": "Flujo de operaciones transfronterizo. Inteligencia de mercado antes de que sea pública. Los miembros del ANCC ven el ecosistema trilateral antes que el mercado.",
+    "pr6-t": "Empresas internacionales",      "pr6-d": "¿Entrando a América del Norte desde Europa, Asia u otras regiones? El ANCC es tu puerta única a Canadá, Estados Unidos y México — con el marco legal y comercial correcto desde el primer día.",
+    "join-label": "Membresía fundadora",
+    "join-h":     "Sé parte de la fundación.",
+    "join-sub":   "El ANCC está construyendo el estándar para los negocios en América del Norte. Los miembros fundadores dan forma a la organización desde el principio — acceso prioritario, tarifas preferenciales y un lugar en la mesa.",
+    "trust-501":  "501(c)(6) en trámite",
+    "trust-priv": "Privado y seguro",
+    "f-fn": "Nombre", "f-ln": "Apellido", "f-em": "Correo electrónico",
+    "f-co": "País",   "f-pr": "Tu perfil",
+    "o-ca": "Canadá", "o-us": "Estados Unidos", "o-mx": "México", "o-other": "Otro",
+    "pr-startup": "Startup", "pr-sme": "Pyme", "pr-corp": "Corporación",
+    "pr-univ": "Universidad", "pr-pro": "Servicios profesionales", "pr-inv": "Inversor",
+    "f-submit":  "Aplicar como miembro fundador",
+    "f-thanks":  "Gracias. Nos pondremos en contacto pronto.",
+    "f-error":   "Algo salió mal. Por favor intenta de nuevo o escríbenos a info@amernor.com.",
+    "ft-li": "LinkedIn", "ft-x": "X (Twitter)",
+    "ft-copy": "© 2025 America North Commerce Council. Todos los derechos reservados.",
+    "ft-501":  "Incorporación 501(c)(6) en trámite — Pensilvania, Estados Unidos"
+  }
+};
+
+/* ════════════════════════════════════════════════
+   LANGUAGE ENGINE
+════════════════════════════════════════════════ */
+let lang = 'en';
+
+function setLanguage(l) {
+  if (!T[l]) return;
+  lang = l;
+  localStorage.setItem('ancc-lang', l);
+  document.documentElement.lang = l;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = T[l][el.getAttribute('data-i18n')];
+    if (v !== undefined) el.textContent = v;
+  });
+
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const v = T[l][el.getAttribute('data-i18n-ph')];
+    if (v !== undefined) el.placeholder = v;
+  });
+
+  ['en','fr','es'].forEach(c => {
+    const b = document.getElementById('btn-'+c);
+    if (b) b.classList.toggle('active', c === l);
+  });
+}
+
+/* ════════════════════════════════════════════════
+   FORM
+   Replace YOUR_FORM_ID → your Formspree ID
+   formspree.io → New Form → copy ID after /f/
+════════════════════════════════════════════════ */
+const FORMSPREE = 'https://formspree.io/f/YOUR_FORM_ID';
+
+document.getElementById('join-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('form-btn');
+  const err = document.getElementById('form-error-msg');
+
+  if (![...this.querySelectorAll('[required]')].every(f => f.value.trim())) {
+    err.textContent = T[lang]['f-error'];
+    err.style.display = 'block';
+    return;
+  }
+  err.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = '…';
+
+  try {
+    const r = await fetch(FORMSPREE, { method:'POST', body: new FormData(this), headers:{Accept:'application/json'} });
+    if (!r.ok) throw 0;
+    this.style.display = 'none';
+    const s = document.getElementById('form-success');
+    s.style.display = 'block';
+    const p = s.querySelector('[data-i18n="f-thanks"]');
+    if (p) p.textContent = T[lang]['f-thanks'];
+  } catch(_) {
+    btn.disabled = false;
+    btn.textContent = T[lang]['f-submit'];
+    err.textContent = T[lang]['f-error'];
+    err.style.display = 'block';
+  }
+});
+
+/* ════════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════════ */
+(function() {
+  const s = localStorage.getItem('ancc-lang');
+  setLanguage(T[s] ? s : 'en');
+})();
+</script>
+
+<!--
+╔══════════════════════════════════════════════════════╗
+║  DEPLOYMENT — BLUEHOST SHARED HOSTING                ║
+╠══════════════════════════════════════════════════════╣
+║  FILES: index.html + logo.png (transparent PNG)      ║
+║  1. Bluehost cPanel → File Manager                   ║
+║  2. Navigate to public_html/ (or public_html/amernor.com/) ║
+║  3. Upload both files                                ║
+║  4. Visit amernor.com — live immediately             ║
+║                                                      ║
+║  FORMSPREE: formspree.io → New Form                  ║
+║  → Replace YOUR_FORM_ID in this file → re-upload     ║
+║  SSL: cPanel → SSL/TLS → Let's Encrypt               ║
+╚══════════════════════════════════════════════════════╝
+-->
+</body>
+</html>
