@@ -843,48 +843,132 @@ em{ font-style:italic; }
 /* ──────────────────────────────────────────────
    RESPONSIVE
 ────────────────────────────────────────────── */
-@media (max-width: 1024px){
+
+/* Prevent horizontal overflow on all sizes */
+html, body { overflow-x: hidden; max-width: 100%; }
+img, video, iframe, .terminal { max-width: 100%; }
+
+/* ── Tablet landscape (≤1100px) ── */
+@media (max-width: 1100px){
   section{ padding:90px 0; }
   .container, .container-tight, .nav-inner, .hero-inner{ padding-left:32px; padding-right:32px; }
   .why-grid{ gap:40px; }
-  .stage-grid{ grid-template-columns:repeat(2,1fr); }
+  .stage-grid{ grid-template-columns:repeat(2,1fr); gap:48px 40px; }
   .footer-top{ grid-template-columns:1fr 1fr; gap:48px; }
+  .do-grid{ gap:52px 60px; }
 }
+
+/* ── Tablet portrait (≤768px) ── */
 @media (max-width: 768px){
   body{ font-size:16px; }
   section{ padding:72px 0; }
   .container, .container-tight, .nav-inner, .hero-inner{ padding-left:22px; padding-right:22px; }
 
+  /* Nav */
   .nav-inner{ height:62px; gap:10px; }
   .nav-name{ display:none; }
-  .nav-right{ gap:10px; }
+  .nav-right{ gap:8px; }
   .nav-langs{ gap:0; }
-  .nav-lang{ padding:6px 6px; font-size:11px; }
+  .nav-lang{ padding:6px 8px; font-size:11px; }
   .nav-cta{ padding:9px 14px; font-size:12px; }
 
+  /* Hero */
   .hero{ padding:84px 0 80px; }
   .hero-eyebrow{ margin-bottom:24px; gap:12px; }
   .hero-eyebrow-bar{ width:28px; }
   .hero-status{ font-size:10px; letter-spacing:0.16em; }
-  .hero h1{ font-size:42px; line-height:1.08; margin-bottom:28px; }
+  .hero h1{ font-size:clamp(36px, 9vw, 52px); line-height:1.06; margin-bottom:28px; }
   .hero-sub{ font-size:16px; margin-bottom:32px; }
 
+  /* Stats */
   .stats{ grid-template-columns:1fr; gap:36px; }
   .stats .rule-gold-vertical{ display:none; }
 
+  /* Statement */
   .statement{ padding:80px 0; }
-  .statement p{ font-size:24px; }
+  .statement p{ font-size:clamp(20px, 4vw, 26px); }
 
-  .why-grid, .built-grid, .eco-grid, .names-grid, .stage-grid, .do-grid{
-    grid-template-columns:1fr; gap:40px;
+  /* All content grids → 1 col */
+  .why-grid, .built-grid, .eco-grid, .names-grid, .do-grid{
+    grid-template-columns:1fr; gap:32px;
   }
-  .do-grid{ gap:36px; }
+  .stage-grid{ grid-template-columns:1fr 1fr; gap:40px 28px; }
 
-  .footer-top{ grid-template-columns:1fr; gap:36px; padding-bottom:36px; }
-  .footer-bottom{ flex-direction:column; gap:12px; text-align:center; }
+  /* Eco cards */
+  .eco-card-inner{ padding:28px 24px 28px; }
 
+  /* Terminal */
+  .terminal{ font-size:12px; }
+  .terminal-body{ padding:20px 18px 22px; }
+
+  /* Do grid */
+  .do-grid{ gap:32px; }
+  .do-item{ gap:20px; }
+
+  /* Capture form */
   .capture-form{ padding:32px 24px; }
   .fields-row{ grid-template-columns:1fr; gap:0; }
+
+  /* Footer */
+  .footer-top{ grid-template-columns:1fr; gap:36px; padding-bottom:36px; }
+  .footer-bottom{ flex-direction:column; gap:12px; text-align:center; }
+}
+
+/* ── Mobile (≤480px) ── */
+@media (max-width: 480px){
+  section{ padding:56px 0; }
+  .container, .container-tight, .nav-inner, .hero-inner{ padding-left:18px; padding-right:18px; }
+
+  /* Nav */
+  .nav-inner{ height:56px; }
+  .nav-logo{ width:34px; height:34px; font-size:13px; }
+  .nav-lang{ padding:5px 7px; font-size:10px; }
+  .nav-cta{ padding:8px 12px; font-size:11px; letter-spacing:0.04em; }
+
+  /* Hero */
+  .hero{ padding:64px 0 60px; }
+  .hero h1{ font-size:clamp(30px, 10vw, 38px); line-height:1.07; margin-bottom:24px; }
+  .hero-sub{ font-size:15px; margin-bottom:28px; }
+  .hero-cta{ width:100%; text-align:center; padding:16px 20px; font-size:14px; }
+
+  /* Stats */
+  .stat-num{ font-size:clamp(32px, 9vw, 48px); }
+
+  /* Statement */
+  .statement p{ font-size:clamp(18px, 5.5vw, 22px); line-height:1.5; }
+
+  /* Stage grid stays 2 cols until 380px */
+  .stage-grid{ gap:32px 20px; }
+
+  /* Names */
+  .name-acronym{ font-size:clamp(34px, 9vw, 48px); }
+  .name-inner{ padding:28px 24px 0; }
+  .name-block{ padding-bottom:28px; }
+
+  /* Terminal */
+  .terminal{ font-size:11px; border-radius:2px; }
+  .terminal-body{ padding:16px 14px 18px; }
+  .terminal-bar{ padding:10px 14px; }
+
+  /* Do */
+  .do-num{ font-size:28px; }
+  .do-grid{ gap:28px; }
+  .do-item{ gap:16px; }
+
+  /* Capture */
+  .capture-form{ padding:28px 18px; border-radius:2px; }
+
+  /* Footer */
+  .footer-top{ gap:28px; }
+  .footer-nav{ gap:12px; }
+}
+
+/* ── Small phones (≤380px) ── */
+@media (max-width: 380px){
+  .container, .container-tight, .nav-inner, .hero-inner{ padding-left:16px; padding-right:16px; }
+  .hero h1{ font-size:28px; }
+  .stage-grid{ grid-template-columns:1fr; gap:28px; }
+  .nav-cta{ display:none; }
 }
 
 /* Reveal */
@@ -1257,7 +1341,7 @@ em{ font-style:italic; }
       <h2 style="margin-top:14px;" data-i18n="capture.h2">Be Part of the Founding.</h2>
       <p data-i18n="capture.body">Founding members shape the organization — priority access, preferred rates, a seat at the table.</p>
     </div>
-    <form class="capture-form" id="join-form" action="https://formspree.io/f/yourFormId" method="POST" novalidate>
+    <form class="capture-form" id="join-form" action="https://formspree.io/info@amernor.com" method="POST" novalidate>
       <div class="fields-row">
         <div class="field">
           <label for="f-first" data-i18n="capture.first">First name</label>
