@@ -971,12 +971,7 @@ img, video, iframe, .terminal { max-width: 100%; }
   .nav-cta{ display:none; }
 }
 
-/* Reveal */
-.reveal{ opacity:0; transform:translateY(16px); transition:opacity 0.7s ease, transform 0.7s ease; }
-.reveal.in{ opacity:1; transform:none; }
-@media (prefers-reduced-motion: reduce){
-  .reveal{ opacity:1; transform:none; transition:none; }
-}
+/* No reveal animation — content always visible */
 </style>
 </head>
 <body>
@@ -2097,15 +2092,7 @@ document.querySelectorAll('.nav-lang').forEach(b=>{
 /* ──────────────────────────────────────────────
    REVEAL ON SCROLL (subtle)
 ────────────────────────────────────────────── */
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('section > .container, section > .container-tight, .hero-inner').forEach(el=>{
-  el.classList.add('reveal');
-  io.observe(el);
-});
+// No reveal animation
 </script>
 
 <!--
